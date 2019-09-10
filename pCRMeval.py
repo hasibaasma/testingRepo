@@ -894,7 +894,7 @@ def main():
 	parser.add_argument('-predInBed','--predictionsInBed',help= 'Set of predictions in bed format')
 	parser.add_argument('-fullredfly','--fullcrmFile',help='File of of all known crms: downloaded from redfly in bed format',required=True)
 	parser.add_argument('-so','--scrmJoinedOutputFile',help='Scrmshaw Output file')
-	parser.add_argument('-tset','--tsetBedOrNot',help='If training set information is in the bed format or not')
+	parser.add_argument('-tsetBedOrList','--tsetBedOrNot',help='If training set information is in the bed format or not')
 	parser.add_argument('-bedTset','--bedTsetFormat',help='File of training set CRMs in the bed format')
 	parser.add_argument('-listTset','--tsetListFormat',help='File of training set CRMs in the list format')
 	parser.add_argument('-pattern','--patternRecovery',help='if your input has nothing to do with how many expression paterrn crms recovered,set this parameter to False. Default value is True',default='True')
@@ -1001,6 +1001,7 @@ def main():
 		methods=['imm','hexmcd','pac']
 		
 		#creating dictionary from the file that contain names of all crms against each training set; use to assess training set sensitivity; in the format name of sets being keys and their respective crms as key's values
+		if 
 		path_to_known_crms=os.path.abspath(tsetListFormat) 
 		with open(path_to_known_crms) as fin:
 			rows = (line.split('\t') for line in fin )
@@ -1325,7 +1326,7 @@ def main():
 			expressionMappedCrmsBedFormatBED=bed_conversion(expressionMappedCrmsBedFormat)
 		
 			#if training set provided is not in bed then extract tset coordinates information from REDfly based on the names in the list provided through creating dictionary
-			if tsetBedOrNot=="False" or tsetBedOrNot=="F" or tsetBedOrNot=="FALSE":
+			if tsetBedOrNot=="LIST" or tsetBedOrNot=="list" or tsetBedOrNot=="notBed" or tsetBedOrNot=="List":
 				#find out method and set name from the user 
 				x='mapping1.adult_mesoderm'
 				tab1='imm'
@@ -1343,7 +1344,7 @@ def main():
 				totalKSubsetcrms,countSubsetModifiedCrms,excludedSubsetCrmsCount,modifiedSubsetCrmsFilePath,excludedSubsetCrmsFilePath= exclude_training_set_crms("expressionMapped",x,tab1,x,expressionMappedCrmsBedFormat)
 			
 			#if the training set is in bed format then using its coordinate information for evaluation purpose, e.g to find out sensitivity and recovery etc
-			else: 
+			elif tsetBedOrNot=="BED" or tsetBedOrNot=="bed" or tsetBedOrNot=="Bed" or tsetBedOrNot=="notList":
 				excludedCrmsFilePath=bedTsetFormat
 				excludedCrmsFilePathBed=bed_conversion(excludedCrmsFilePath)
 				#size of tset
