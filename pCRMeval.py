@@ -7,7 +7,8 @@ from __future__ import absolute_import, division, print_function
 # Halfon Lab
 
 #hasiba asma
-#Date: Sept 2018																																																									#
+#Date: Sept 2018
+#Testing Git locally																																																									#
 #Purpose: This pipeline is written to evaluate the results of Supervised Enhancer Prediction Algorithm such as SCRMshaw, imogene etc..Specifically it will acess the Training Set Sensitivity, REDfly Recovery and Expression Pattern Precision	#
 #Input and Output: To learn the details about the required input files and what this pipeline would generate as its output please see README enclosed in the package																					#
 #####################################################################################################################################################################################################################################################
