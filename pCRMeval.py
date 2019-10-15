@@ -5,7 +5,11 @@ from __future__ import absolute_import, division, print_function
 
 ####################################################################################------BRIED DESCRIPTION-------###################################################################################################################################
 # Halfon Lab
+<<<<<<< HEAD
 # Hasiba Asma (hasibaas@buffalo.edu)
+=======
+# Hasiba Asma
+>>>>>>> 95710d6a9b5217dee80ada087767661f96146cb7
 #Date: Sept 2018																																																									#
 #Purpose: This pipeline is written to evaluate the results of Supervised Enhancer Prediction Algorithm such as SCRMshaw, imogene etc..Specifically it will acess the Training Set Sensitivity, REDfly Recovery and Expression Pattern Precision	#
 #Input and Output: To learn the details about the required input files and what this pipeline would generate as its output please see README enclosed in the package																					#
